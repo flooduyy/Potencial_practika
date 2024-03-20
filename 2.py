@@ -1,11 +1,12 @@
 import csv  # импортируем модуль для работы с csv файлами
 
+
 with open('students.csv', encoding='utf8') as file:  # открываем файл для чтения
     reader = list(csv.DictReader(file, delimiter=',', quotechar='"'))  # заносим его строки в список
     for i in range(len(reader)):  # сортировка списка
         j = i - 1
         key = reader[i]  # ключевое значение
-        while float(reader[j]['score'] if reader[j]['score'] != 'None' else 0) < float(key['score'] if key['score'] != 'None' else 0) and j >= 0:
+        while float(reader[j]["score"] if reader[j]["score"] != 'None' else 0) < float(key['score'] if key['score'] != "None" else 0) and j >= 0:
             reader[j + 1] = reader[j]
             j -= 1
         reader[j+1] = key
