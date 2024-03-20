@@ -10,7 +10,7 @@ def create_initials(s):  # генерация логина
 
 def create_password():  # генерация пароля
     characters = string.ascii_letters + string.digits  # всевозможные буквы и цифры
-    password = ''.join(random.choice(characters) for i in range(8))  # пароль из рандомных символов строки characters длиной 8
+    password = ''.join(random.choice(characters) for _ in range(8))  # пароль из рандомных символов строки characters длиной 8
     return password
 
 
