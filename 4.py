@@ -4,7 +4,7 @@ import random  # для генерации пароля
 
 
 def create_initials(s):  # генерация логина
-    names = s.split()  # список из ФИО
+    names = s.split()  # список из Ф И О
     return f'{names[0]}_{names[1][0]}{names[2][0]}'
 
 

@@ -1,7 +1,7 @@
-import csv
+import csv  # импортируем модуль для работы с csv файлами
 
 
-with open('students.csv', encoding="utf8") as f:
+with open('students_new.csv', encoding="utf8") as f:
     reader = csv.DictReader(f, delimiter=',', quotechar='"')
     data = sorted(reader, key=lambda x: x['titleProject_id'])
 

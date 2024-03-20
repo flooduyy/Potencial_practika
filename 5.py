@@ -15,13 +15,13 @@ def generate_hash(s: str):  # генерация хеша
 
 
 students_with_hash = []  # результирующий список
-with open('students.csv', encoding='utf-8') as file:
+with open('students.csv', encoding='utf-8') as file:  # открываем список для чтения
     reader = list(csv.DictReader(file, delimiter=',', quotechar='"'))
     for row in reader:  # заменяем id каждой строчки на хэш
         row['id'] = generate_hash(row['Name'])
-        students_with_hash.append(row)
+        students_with_hash.append(row)  # добавляем строку с заменой в результирующий список
 
 with open('students_with_hash.csv', 'w', newline='', encoding='utf-8') as file:
     w = csv.DictWriter(file, fieldnames=['id', 'Name', 'titleProject_id', 'class', 'score'])
-    w.writeheader()  # составляем файл из результирующего списка
+    w.writeheader()  # составляем новый файл из результирующего списка
     w.writerows(students_with_hash)
