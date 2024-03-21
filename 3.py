@@ -2,7 +2,7 @@ import csv  # импортируем модуль для работы с csv ф�
 
 
 with open('students_new.csv', encoding="utf8") as file:  # открываем файл для чтения
-    reader = csv.DictReader(file, delimiter=',', quotechar='"')  # заносим его строки в список
+    reader = list(csv.DictReader(file, delimiter=',', quotechar='"'))  # заносим его строки в список
     data = sorted(reader, key=lambda x: x['titleProject_id'])  # сортируем по id проекта
 
 id_project = input()  # вводим искомый id проекта
